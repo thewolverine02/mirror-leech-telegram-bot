@@ -34,7 +34,7 @@ def cloneNode(update, context):
     gdtot_link = is_gdtot_link(link)
     if gdtot_link:
         try:
-            msg = sendMessage(f"Processing: <code>{link}</code>", context.bot, update)
+            msg = sendMessage(f"🚀𝗖𝗼𝗻𝗻𝗲𝗰𝘁𝗶𝗻𝗴 𝗧𝗼 𝗚𝗗𝗧𝗼𝗧: <code>{link}</code>", context.bot, update)
             link = gdtot(link)
             deleteMessage(context.bot, msg)
         except DirectDownloadLinkException as e:
@@ -49,7 +49,7 @@ def cloneNode(update, context):
             LOGGER.info('Checking File/Folder if already in Drive...')
             smsg, button = gd.drive_list(name, True, True)
             if smsg:
-                msg3 = "File/Folder is already available in Drive.\nHere are the search results:"
+                msg3 = "File/Folder is already available in Drive.\n𝗛𝗲𝗿𝗲 𝗔𝗿𝗲 𝗧𝗵𝗲 𝗦𝗲𝗮𝗿𝗰𝗵 𝗥𝗲𝘀𝘂𝗹𝘁𝘀👇:"
                 sendMarkup(msg3, context.bot, update, button)
                 if gdtot_link:
                     gd.deletefile(link)
@@ -60,7 +60,7 @@ def cloneNode(update, context):
                 msg2 = f'Failed, Clone limit is {CLONE_LIMIT}GB.\nYour File/Folder size is {get_readable_file_size(size)}.'
                 return sendMessage(msg2, context.bot, update)
         if files <= 10:
-            msg = sendMessage(f"Cloning: <code>{link}</code>", context.bot, update)
+            msg = sendMessage(f"♻️𝗖𝗹𝗼𝗻𝗶𝗻𝗴 𝗚𝗱𝗿𝗶𝘃𝗲 𝗟𝗶𝗻𝗸: <code>{link}</code>", context.bot, update)
             result, button = gd.clone(link)
             deleteMessage(context.bot, msg)
         else:
@@ -91,7 +91,7 @@ def cloneNode(update, context):
         if gdtot_link:
             gd.deletefile(link)
     else:
-        sendMessage('Send Gdrive or gdtot link along with command or by replying to the link by command', context.bot, update)
+        sendMessage('Send 𝗚𝗱𝗿𝗶𝘃𝗲 or 𝗚𝗗𝗧𝗼𝘁 link along with command or by replying to the link by command', context.bot, update)
 
 clone_handler = CommandHandler(BotCommands.CloneCommand, cloneNode, filters=CustomFilters.authorized_chat | CustomFilters.authorized_user, run_async=True)
 dispatcher.add_handler(clone_handler)
