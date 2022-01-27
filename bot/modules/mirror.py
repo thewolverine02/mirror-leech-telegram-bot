@@ -196,16 +196,16 @@ class MirrorListener:
     def onUploadComplete(self, link: str, size, files, folders, typ, name: str):
         if self.isLeech:
             count = len(files)
-            msg = f'<b>Name: </b><code>{name}</code>\n\n'
-            msg += f'<b>Size: </b>{size}\n'
-            msg += f'<b>Total Files: </b>{count}'
+            msg = f'<b>𝗡𝗮𝗺𝗲: </b><code>{name}</code>\n\n'
+            msg += f'<b>𝗦𝗶𝘇𝗲: </b>{size}\n'
+            msg += f'<b>𝗧𝗼𝘁𝗮𝗹 𝗙𝗶𝗹𝗲𝘀 𝗵𝗮𝘀 𝘂𝗽𝗹𝗼𝗮𝗱𝗲𝗱: </b>{count}'
             if typ != 0:
-                msg += f'\n<b>Corrupted Files: </b>{typ}'
+                msg += f'\n<b>𝗖𝗼𝗿𝗿𝘂𝗽𝘁𝗲𝗱 𝗙𝗶𝗹𝗲𝘀: </b>{typ}'
             if self.message.chat.type == 'private':
                 sendMessage(msg, self.bot, self.update)
             else:
                 chat_id = str(self.message.chat.id)[4:]
-                msg += f'\n<b>cc: </b>{self.tag}\n\n'
+                msg += f'\n<b>𝗖𝗖: </b>{self.tag}\n\n'
                 fmsg = ''
                 for index, item in enumerate(list(files), start=1):
                     msg_id = files[item]
@@ -230,15 +230,15 @@ class MirrorListener:
             else:
                 update_all_messages()
         else:
-            msg = f'<b>Name: </b><code>{name}</code>\n\n<b>Size: </b>{size}'
-            msg += f'\n\n<b>Type: </b>{typ}'
+            msg = f'<b>𝗡𝗮𝗺𝗲: </b><code>{name}</code>\n\n<b>Size𝗦𝗶𝘇𝗲: </b>{size}'
+            msg += f'\n\n<b>𝗧𝘆𝗽𝗲: </b>{typ}'
             if ospath.isdir(f'{DOWNLOAD_DIR}{self.uid}/{name}'):
-                msg += f'\n<b>SubFolders: </b>{folders}'
-                msg += f'\n<b>Files: </b>{files}'
-            msg += f'\n\n<b>cc: </b>{self.tag}'
+                msg += f'\n<b>𝗦𝘂𝗯𝗳𝗼𝗹𝗱𝗲𝗿𝘀: </b>{folders}'
+                msg += f'\n<b>𝗙𝗶𝗹𝗲𝘀: </b>{files}'
+            msg += f'\n\n<b>𝗰𝗰: </b>{self.tag}'
             buttons = ButtonMaker()
             link = short_url(link)
-            buttons.buildbutton("☁️ Drive Link", link)
+            buttons.buildbutton("☁️𝗗𝗿𝗶𝘃𝗲 𝗟𝗶𝗻𝗸☁️", link)
             LOGGER.info(f'Done Uploading {name}')
             if INDEX_URL is not None:
                 url_path = requests.utils.quote(f'{name}')
@@ -246,14 +246,14 @@ class MirrorListener:
                 if ospath.isdir(f'{DOWNLOAD_DIR}/{self.uid}/{name}'):
                     share_url += '/'
                     share_url = short_url(share_url)
-                    buttons.buildbutton("⚡ Index Link", share_url)
+                    buttons.buildbutton("⚡𝗜𝗻𝗱𝗲𝘅 𝗟𝗶𝗻𝗸⚡", share_url)
                 else:
                     share_url = short_url(share_url)
-                    buttons.buildbutton("⚡ Index Link", share_url)
+                    buttons.buildbutton("⚡𝗜𝗻𝗱𝗲𝘅 𝗟𝗶𝗻𝗸⚡", share_url)
                     if VIEW_LINK:
                         share_urls = f'{INDEX_URL}/{url_path}?a=view'
                         share_urls = short_url(share_urls)
-                        buttons.buildbutton("🌐 View Link", share_urls)
+                        buttons.buildbutton("🌐𝗩𝗶𝗲𝘄 𝗟𝗶𝗻𝗸🌐", share_urls)
             if BUTTON_FOUR_NAME is not None and BUTTON_FOUR_URL is not None:
                 buttons.buildbutton(f"{BUTTON_FOUR_NAME}", f"{BUTTON_FOUR_URL}")
             if BUTTON_FIVE_NAME is not None and BUTTON_FIVE_URL is not None:
