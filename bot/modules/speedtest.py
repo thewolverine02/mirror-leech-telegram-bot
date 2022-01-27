@@ -16,7 +16,7 @@ def speedtest(update, context):
     test.results.share()
     result = test.results.dict()
     string_speed = f'''
-   ╭────[<b>𝗦𝗲𝗿𝘃𝗲𝗿</b>]───
+<b>╭────[𝗦𝗲𝗿𝘃𝗲𝗿]───</b>
 <b>├Name:</b> <code>{result['server']['name']}</code>
 <b>├Country:</b> <code>{result['server']['country']}, {result['server']['cc']}</code>
 <b>├Sponsor:</b> <code>{result['server']['sponsor']}</code>
