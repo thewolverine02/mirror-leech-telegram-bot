@@ -87,7 +87,7 @@ def unauthorize(update, context):
                 msg = '𝗨𝘀𝗲𝗿 𝗨𝗻𝗮𝘂𝘁𝗵𝗼𝗿𝗶𝘇𝗲𝗱 ✅'
             AUTHORIZED_CHATS.remove(user_id)
         else:
-            msg = 𝗨𝘀𝗲𝗿 𝗔𝗹𝗿𝗲𝗮𝗱𝘆 𝗨𝗻𝗮𝘂𝘁𝗵𝗼𝗿𝗶𝘇𝗲𝗱!!🤦‍♂️'
+            msg = '𝗨𝘀𝗲𝗿 𝗔𝗹𝗿𝗲𝗮𝗱𝘆 𝗨𝗻𝗮𝘂𝘁𝗵𝗼𝗿𝗶𝘇𝗲𝗱!!🤦‍♂️'
     if DB_URI is None:
         with open('authorized_chats.txt', 'a') as file:
             file.truncate(0)
