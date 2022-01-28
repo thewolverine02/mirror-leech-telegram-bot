@@ -152,14 +152,14 @@ def get_readable_message():
                            f" | <b>𝗟𝗲𝗲𝗰𝗵𝗲𝗿𝘀:</b> {download.torrent_info().num_leechs}"
                 except:
                     pass
-                msg += f"\n<b> 𝗧𝗼 𝗖𝗮𝗻𝗰𝗲𝗹:</b> <code>/{BotCommands.CancelMirror} {download.gid()}</code>"
+                msg += f"\n<b>𝗧𝗼 𝗖𝗮𝗻𝗰𝗲𝗹:</b> <code>/{BotCommands.CancelMirror} {download.gid()}</code>"
             elif download.status() == MirrorStatus.STATUS_SEEDING:
                 msg += f"\n<b>𝗦𝗶𝘇𝗲: </b>{download.size()}"
                 msg += f"\n<b>𝗦𝗽𝗲𝗲𝗱: </b>{get_readable_file_size(download.torrent_info().upspeed)}/s"
                 msg += f" | <b>𝗨𝗽𝗹𝗼𝗮𝗱𝗲𝗱: </b>{get_readable_file_size(download.torrent_info().uploaded)}"
                 msg += f"\n<b>𝗥𝗮𝘁𝗶𝗼: </b>{round(download.torrent_info().ratio, 3)}"
                 msg += f" | <b>𝗧𝗶𝗺𝗲: </b>{get_readable_time(download.torrent_info().seeding_time)}"
-                msg += f"\n<b> 𝗧𝗼 𝗖𝗮𝗻𝗰𝗲𝗹:</b> <code>/{BotCommands.CancelMirror} {download.gid()}</code>"
+                msg += f"\n<b>𝗧𝗼 𝗖𝗮𝗻𝗰𝗲𝗹:</b> <code>/{BotCommands.CancelMirror} {download.gid()}</code>"
             else:
                 msg += f"\n<b>𝗦𝗶𝘇𝗲: </b>{download.size()}"
             msg += "\n\n"
