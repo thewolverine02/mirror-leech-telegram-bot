@@ -370,7 +370,7 @@ class GoogleDriveHelper:
                     buttons.buildbutton("⚡𝗜𝗻𝗱𝗲𝘅 𝗟𝗶𝗻𝗸⚡", url)
             else:
                 file = self.__copyFile(meta.get('id'), parent_id)
-                msg += f'<b>Name𝗡𝗮𝗺𝗲: </b><code>{file.get("name")}</code>'
+                msg += f'<b>𝗡𝗮𝗺𝗲: </b><code>{file.get("name")}</code>'
                 durl = self.__G_DRIVE_BASE_DOWNLOAD_URL.format(file.get("id"))
                 buttons = ButtonMaker()
                 durl = short_url(durl)
@@ -730,7 +730,7 @@ class GoogleDriveHelper:
         if self.num_of_path > 1:
             self.__edit_telegraph()
 
-        msg = f"<b>𝗙𝗼𝘂𝗻𝗱 {contents_count} 𝗥𝗲𝘀𝘂𝗹𝘁 𝗙𝗼𝗿<i>{fileName}</i></b>"
+        msg = f"<b>𝗙𝗼𝘂𝗻𝗱  {contents_count}  𝗥𝗲𝘀𝘂𝗹𝘁 𝗙𝗼𝗿 <i>{fileName}</i></b>"
         buttons = ButtonMaker()
         buttons.buildbutton("🔎𝗖𝗹𝗶𝗰𝗸 𝗛𝗲𝗿𝗲 𝗧𝗼 𝗩𝗶𝗲𝘄 𝗥𝗲𝘀𝘂𝗹𝘁𝘀", f"https://telegra.ph/{self.path[0]}")
 
