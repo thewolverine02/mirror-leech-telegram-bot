@@ -44,7 +44,7 @@ def select_type(update, context):
         query.answer()
         list_method = data[3]
         item_type = data[2]
-        editMessage(f"<b>🔍𝗦𝗲𝗮𝗿𝗰𝗵𝗶𝗻𝗴 𝗙𝗼𝗿<i>{key}</i></b>", msg)
+        editMessage(f"<b>🔍𝗦𝗲𝗮𝗿𝗰𝗵𝗶𝗻𝗴 𝗙𝗼𝗿 <i>{key}</i></b>", msg)
         Thread(target=_list_drive, args=(key, msg, list_method, item_type)).start()
     else:
         query.answer()
