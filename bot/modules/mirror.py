@@ -205,7 +205,7 @@ class MirrorListener:
                 sendMessage(msg, self.bot, self.update)
             else:
                 chat_id = str(self.message.chat.id)[4:]
-                msg += f'\n<b>𝗖𝗖: </b>{self.tag}\n\n'
+                msg += f'\n<b>𝗰𝗰: </b>{self.tag}\n\n'
                 fmsg = ''
                 for index, item in enumerate(list(files), start=1):
                     msg_id = files[item]
@@ -230,7 +230,7 @@ class MirrorListener:
             else:
                 update_all_messages()
         else:
-            msg = f'<b>𝗡𝗮𝗺𝗲: </b><code>{name}</code>\n\n<b>Size𝗦𝗶𝘇𝗲: </b>{size}'
+            msg = f'<b>𝗡𝗮𝗺𝗲: </b><code>{name}</code>\n\n<b>𝗦𝗶𝘇𝗲: </b>{size}'
             msg += f'\n\n<b>𝗧𝘆𝗽𝗲: </b>{typ}'
             if ospath.isdir(f'{DOWNLOAD_DIR}{self.uid}/{name}'):
                 msg += f'\n<b>𝗦𝘂𝗯𝗳𝗼𝗹𝗱𝗲𝗿𝘀: </b>{folders}'
